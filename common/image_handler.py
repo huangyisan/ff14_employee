@@ -1,7 +1,6 @@
 import pyautogui
 import time
 
-
 def judege_image(region, image):
     res = pyautogui.locateOnScreen(image=image, region=region, confidence=0.9)
     print(res)
@@ -18,6 +17,7 @@ def into_direction():
     # 弹出npc对话
     time.sleep(2)
     pyautogui.press(']')
+    time.sleep(0.6)
     # select '结束'
     for i in range(5):
         time.sleep(0.3)
@@ -49,8 +49,6 @@ def into_direction():
     pyautogui.press(']')
     # 等待主菜单
     time.sleep(2)
-
-    time.sleep(10)
     return
 
 def restart_work():
@@ -62,13 +60,12 @@ def back_exit():
 
 def call_employee():
     for i in range(2):
-        time.sleep(0.3)
+        time.sleep(0.2)
         pyautogui.press(']')
-
 
 if __name__ == '__main__':
     while True:
-        time.sleep(3)
+        time.sleep(2)
         call_employee()
 
         workdone_region = (665, 683, 669, 705)
