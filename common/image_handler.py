@@ -26,13 +26,13 @@ def into_direction():
     time.sleep(0.8)
     # 点击结束ll
     pyautogui.press(']')
-    time.sleep(0.8)
+    time.sleep(1)
     # 左移光标至 重新委托
     pyautogui.press('k')
     time.sleep(0.5)
     # 点击 重新委托
     pyautogui.press(']')
-    time.sleep(0.5)
+    time.sleep(1)
     # 左移光标至 委托
     pyautogui.press('k')
     time.sleep(0.5)
@@ -64,18 +64,16 @@ def call_employee():
         pyautogui.press(']')
 
 if __name__ == '__main__':
+    workdone_region = (667, 678, 669, 694)
+    workdone_image = 'workdone.png'
     while True:
         time.sleep(2)
         call_employee()
-
-        workdone_region = (665, 683, 669, 705)
-        workdone_image = 'workdone.png'
         is_work_done(workdone_region, workdone_image)
         flag = True
         count = 0
         while flag:
             time.sleep(0.5)
-            # 判断是否结束任务
             if is_work_done(workdone_region, workdone_image):
                 # 则进入下一层
                 into_direction()
